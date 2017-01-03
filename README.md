@@ -34,7 +34,7 @@ The [Drupal](https://wwww.drupal.org) bundle consist of the following containers
 
 | Container | Version | Service name | Image | Public Port | Enabled by default |
 | --------- | ------- | ------------ | ----- | ----------- | ------------------ |
-| [Apache PHP](#apache-php) | [7.0](https://github.com/keopx/docker-apache2-php/blob/master/7.0/)/[5.6](https://github.com/keopx/docker-apache2-php/tree/master/5.6/) | apache2-php | <a href="https://hub.docker.com/r/keopx/apache2-php/" target="_blank">keopx/apache2-php</a> | 8008 | ✓ |
+| [Apache PHP](#apache-php) | [7.0](https://github.com/keopx/docker-apache-php/blob/master/7.0/)/[5.6](https://github.com/keopx/docker-apache-php/blob/master/5.6/) | apache-php | <a href="https://hub.docker.com/r/keopx/apache-php/" target="_blank">keopx/apache-php</a> | 80 | ✓ |
 | [MySQL](#mysql) | [5.7](https://github.com/keopx/docker-mysql/blob/master/5.7/)/[5.6](https://github.com/keopx/docker-mysql/blob/master/5.6/)/[5.5](https://github.com/keopx/docker-mysql/blob/master/5.5/) | mysql | <a href="https://hub.docker.com/r/keopx/mysql/" target="_blank">keopx/mysql</a> | 3306 | ✓ |
 | [phpMyAdmin](#phpmyadmin) | | phpmyadmin | <a href="https://hub.docker.com/r/phpmyadmin/phpmyadmin" target="_blank">phpmyadmin/phpmyadmin</a> |  8080 | ✓ |
 | [Mailhog](#mailhog) | | mailhog | <a href="https://hub.docker.com/r/mailhog/mailhog" target="_blank">mailhog/mailhog</a> | 8025 - 1025 | ✓ |
@@ -49,13 +49,13 @@ The [Drupal](https://wwww.drupal.org) bundle consist of the following containers
 Run:
 
 ```bash
-$ docker-compose down
+$ docker-compose up -d
 ```
 
 Stop:
 
 ```bash
-$ docker-compose up -d
+$ docker-compose down
 ```
 
 #### Run bash
@@ -91,13 +91,13 @@ docker-compose down && docker-compose up -d
 ## Containers
 
 ### Apache PHP
-- 7.0, latest ([7.0/Dockerfile](https://github.com/keopx/docker-apache2-php/blob/master/7.0/Dockerfile))
-- 5.6 ([5.6/Dockerfile](https://github.com/keopx/docker-apache2-php/tree/master/5.6/Dockerfile))
+- 7.0, latest ([7.0/Dockerfile](https://github.com/keopx/docker-apache-php/blob/master/7.0/Dockerfile))
+- 5.6 ([5.6/Dockerfile](https://github.com/keopx/docker-apache-php/blob/master/5.6/Dockerfile))
 
 ### MySQL
 - 5.7, latest ([5.7/Dockerfile](https://github.com/keopx/docker-mysql/blob/master/5.7/Dockerfile))
-- 5.6 ([5.6/Dockerfile](https://github.com/keopx/docker-mysql/tree/master/5.6/Dockerfile))
-- 5.5 ([5.5/Dockerfile](https://github.com/keopx/docker-mysql/tree/master/5.6/Dockerfile))
+- 5.6 ([5.6/Dockerfile](https://github.com/keopx/docker-mysql/blob/master/5.6/Dockerfile))
+- 5.5 ([5.5/Dockerfile](https://github.com/keopx/docker-mysql/blob/master/5.6/Dockerfile))
 
 ### phpMyAdmin
 
@@ -191,7 +191,7 @@ If you need run some command, like a composer, to access to remote using ssh key
 
 You can check in docker-composer.yml two special environment variable to setup SMTP service to test local emails.
 
-The _apache2-php_ has _ssmtp_ sender package. Here default setup to run by default with mailhog.
+The _apache-php_ has _ssmtp_ sender package. Here default setup to run by default with mailhog.
 
 Use to connect to MailHog **mail** instead *localhost*.
 
