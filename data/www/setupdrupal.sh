@@ -1,5 +1,6 @@
 #!/bin/bash
 cd drupal
+sudo rm -fr vendor
 composer install
 sudo chmod 777 sites/default
 cd sites/default
@@ -19,7 +20,7 @@ drush si standard --db-url=mysql://drupaluser:drupalpass@mysql/drupal --site-nam
 drush en admin_toolbar admin_toolbar_tools -y
 # Add local env setup
 sudo sed -i 's/# if (file_exists/if (file_exists/' settings.php
-sudo sed -i 's/#   include __DIR__/  include __DIR__/' settings.php
+sudo sed -i 's/#   include $app_root/  include $app_root/' settings.php
 sudo sed -i 's/# }/}/' settings.php
 sudo sed -i 's/# $settings/$settings/' settings.local.php
 drush cr
