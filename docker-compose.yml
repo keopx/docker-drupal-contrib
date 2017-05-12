@@ -25,7 +25,7 @@ services:
       ## Drush aliases support. e.g.
       # - ~/.drush:/root/.drush
       ## SSH support. e.g.
-      # - ~/.ssh:/root/.ssh      
+      # - ~/.ssh:/root/.ssh
     # environment:
       ### WARNING: Use only if you not use custom php.ini.
       ## ssmtp mail sender.
@@ -33,7 +33,7 @@ services:
       ## SMTP server configruation: "domain:port" | "mail" server domain is mailhog name.
       # - PHP_SENDMAIL_DOMAIN=mail:1025
     working_dir: /var/www
-    command: bash -c "cd /var/www && ./clonedrupal.sh && apache2-foreground"
+    command: bash -c "cd /var/www && ./initdrupal.sh && apache2-foreground"
   mysql:
     # keopx/mysql available tags: latest, 5.7, 5.6, 5.5.
     image: keopx/mysql:5.5
